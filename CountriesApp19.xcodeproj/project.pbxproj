@@ -73,7 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				EE44543A22C1570C00DB123D /* Controller */,
-				EE44543422C14FFE00DB123D /* Modal */,
+				EE44543422C14FFE00DB123D /* Model */,
 				EE44541822C14BAA00DB123D /* AppDelegate.swift */,
 				EE44543922C1525200DB123D /* View */,
 				EE44541F22C14BAC00DB123D /* Assets.xcassets */,
@@ -82,7 +82,7 @@
 			path = CountriesApp19;
 			sourceTree = "<group>";
 		};
-		EE44543422C14FFE00DB123D /* Modal */ = {
+		EE44543422C14FFE00DB123D /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				EE44543222C14FE300DB123D /* DataManager.swift */,
@@ -90,7 +90,7 @@
 				EE44543722C1505E00DB123D /* Country.swift */,
 				EE97C74C22C271F5000E47DA /* Constants.swift */,
 			);
-			path = Modal;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		EE44543922C1525200DB123D /* View */ = {
