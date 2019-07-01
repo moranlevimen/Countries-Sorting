@@ -2,29 +2,38 @@
 //  CountryViewController.swift
 //  CountriesApp19
 //
-//  Created by moran levi on 25/06/2019.
-//  Copyright © 2019 MoranLeviLtd. All rights reserved.
+//  Created by Neria Jerafi on 24/06/2019.
+//  Copyright © 2019 Neria Jerafi. All rights reserved.
 //
 
 import UIKit
 
 class CountryViewController: UIViewController {
-
+    
+    @IBOutlet var bordersTable:
+    CountiresTableView!
+    
+    var selectedCountry: Country?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        initVC()
+    }
+    func initVC()  {
+        self.title = self.selectedCountry?.name!
+        self.bordersTable.alphCode = self.selectedCountry?.alpha3Code
+        self.bordersTable.countriesId = (self.selectedCountry?.borders)!
+        self.bordersTable.countyTableDelege = self
+    }
+}
+extension CountryViewController: CountryDelegate{
+    func selectedCountry(country: Country) {
+        self.title = country.name!
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    func showAlert() {}
+    
+    
 }
+

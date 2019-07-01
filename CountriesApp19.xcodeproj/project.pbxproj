@@ -12,6 +12,15 @@
 		EE44541E22C14BAA00DB123D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE44541C22C14BAA00DB123D /* Main.storyboard */; };
 		EE44542022C14BAC00DB123D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE44541F22C14BAC00DB123D /* Assets.xcassets */; };
 		EE44542322C14BAC00DB123D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE44542122C14BAC00DB123D /* LaunchScreen.storyboard */; };
+		EE44542B22C14C2C00DB123D /* CountiresTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE44542A22C14C2C00DB123D /* CountiresTableView.xib */; };
+		EE44542D22C14CF800DB123D /* CountiresTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE44542C22C14CF800DB123D /* CountiresTableView.swift */; };
+		EE44543022C14F1C00DB123D /* CountyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE44542E22C14F1C00DB123D /* CountyCell.swift */; };
+		EE44543122C14F1C00DB123D /* CountyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE44542F22C14F1C00DB123D /* CountyCell.xib */; };
+		EE44543322C14FE300DB123D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE44543222C14FE300DB123D /* DataManager.swift */; };
+		EE44543622C1501800DB123D /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE44543522C1501800DB123D /* ServerManager.swift */; };
+		EE44543822C1505E00DB123D /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE44543722C1505E00DB123D /* Country.swift */; };
+		EE97C74B22C26458000E47DA /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE97C74A22C26458000E47DA /* CountryViewController.swift */; };
+		EE97C74D22C271F5000E47DA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE97C74C22C271F5000E47DA /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +31,15 @@
 		EE44541F22C14BAC00DB123D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE44542222C14BAC00DB123D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE44542422C14BAC00DB123D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE44542A22C14C2C00DB123D /* CountiresTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountiresTableView.xib; sourceTree = "<group>"; };
+		EE44542C22C14CF800DB123D /* CountiresTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountiresTableView.swift; sourceTree = "<group>"; };
+		EE44542E22C14F1C00DB123D /* CountyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountyCell.swift; sourceTree = "<group>"; };
+		EE44542F22C14F1C00DB123D /* CountyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountyCell.xib; sourceTree = "<group>"; };
+		EE44543222C14FE300DB123D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		EE44543522C1501800DB123D /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
+		EE44543722C1505E00DB123D /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		EE97C74A22C26458000E47DA /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
+		EE97C74C22C271F5000E47DA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +72,47 @@
 		EE44541722C14BAA00DB123D /* CountriesApp19 */ = {
 			isa = PBXGroup;
 			children = (
+				EE44543A22C1570C00DB123D /* Controller */,
+				EE44543422C14FFE00DB123D /* Modal */,
 				EE44541822C14BAA00DB123D /* AppDelegate.swift */,
-				EE44541A22C14BAA00DB123D /* ViewController.swift */,
-				EE44541C22C14BAA00DB123D /* Main.storyboard */,
+				EE44543922C1525200DB123D /* View */,
 				EE44541F22C14BAC00DB123D /* Assets.xcassets */,
-				EE44542122C14BAC00DB123D /* LaunchScreen.storyboard */,
 				EE44542422C14BAC00DB123D /* Info.plist */,
 			);
 			path = CountriesApp19;
+			sourceTree = "<group>";
+		};
+		EE44543422C14FFE00DB123D /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				EE44543222C14FE300DB123D /* DataManager.swift */,
+				EE44543522C1501800DB123D /* ServerManager.swift */,
+				EE44543722C1505E00DB123D /* Country.swift */,
+				EE97C74C22C271F5000E47DA /* Constants.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		EE44543922C1525200DB123D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE44542C22C14CF800DB123D /* CountiresTableView.swift */,
+				EE44542A22C14C2C00DB123D /* CountiresTableView.xib */,
+				EE44542E22C14F1C00DB123D /* CountyCell.swift */,
+				EE44542F22C14F1C00DB123D /* CountyCell.xib */,
+				EE44542122C14BAC00DB123D /* LaunchScreen.storyboard */,
+				EE44541C22C14BAA00DB123D /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EE44543A22C1570C00DB123D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EE44541A22C14BAA00DB123D /* ViewController.swift */,
+				EE97C74A22C26458000E47DA /* CountryViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,7 +174,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE44542322C14BAC00DB123D /* LaunchScreen.storyboard in Resources */,
+				EE44543122C14F1C00DB123D /* CountyCell.xib in Resources */,
 				EE44542022C14BAC00DB123D /* Assets.xcassets in Resources */,
+				EE44542B22C14C2C00DB123D /* CountiresTableView.xib in Resources */,
 				EE44541E22C14BAA00DB123D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,8 +188,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE44543822C1505E00DB123D /* Country.swift in Sources */,
+				EE97C74B22C26458000E47DA /* CountryViewController.swift in Sources */,
+				EE44543622C1501800DB123D /* ServerManager.swift in Sources */,
 				EE44541B22C14BAA00DB123D /* ViewController.swift in Sources */,
+				EE44543322C14FE300DB123D /* DataManager.swift in Sources */,
+				EE44543022C14F1C00DB123D /* CountyCell.swift in Sources */,
 				EE44541922C14BAA00DB123D /* AppDelegate.swift in Sources */,
+				EE44542D22C14CF800DB123D /* CountiresTableView.swift in Sources */,
+				EE97C74D22C271F5000E47DA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,13 +343,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 94YWBE3C4K;
+				DEVELOPMENT_TEAM = 3V5PB2ET49;
 				INFOPLIST_FILE = CountriesApp19/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Moran-sApps.CountriesApp19";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NeriaJerafi.CountriesApp19;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -301,13 +361,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 94YWBE3C4K;
+				DEVELOPMENT_TEAM = 3V5PB2ET49;
 				INFOPLIST_FILE = CountriesApp19/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Moran-sApps.CountriesApp19";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NeriaJerafi.CountriesApp19;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -2,8 +2,9 @@
 //  DataManager.swift
 //  CountriesApp19
 //
-//  Created by moran levi on 24/06/2019.
-//  Copyright © 2019 MoranLeviLtd. All rights reserved.
+//  Created by Neria Jerafi on 24/06/2019.
+//  Copyright © 2019 Neria Jerafi. All rights reserved.
+//
 
 
 import Foundation
@@ -12,6 +13,8 @@ class DataManager {
     
     private static var sharedInstance:DataManager?;//singltone
     private var countriesDict:[String:Country] = [:];
+    
+    
     
     private init(){
     }
@@ -33,6 +36,16 @@ class DataManager {
     
     func getCountriesDict() -> [String:Country] {
         return self.countriesDict
+    }
+    
+    
+    
+    func getSpesificCountry(countryId: String) -> Country?{ 
+        if let country = self.countriesDict[countryId]{
+            return country
+        }
+        return nil
+        
     }
     
     

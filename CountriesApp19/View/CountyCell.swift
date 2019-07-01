@@ -2,19 +2,19 @@
 //  CountyCell.swift
 //  CountriesApp19
 //
-//  Created by moran levi on 24/06/2019.
-//  Copyright © 2019 MoranLeviLtd. All rights reserved.
+//  Created by Neria Jerafi on 24/06/2019.
+//  Copyright © 2019 Neria Jerafi. All rights reserved.
 //
 
 import UIKit
 
 class CountyCell: UITableViewCell {
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     @IBOutlet var NativeName: UILabel!
     @IBOutlet var Name: UILabel!
     
@@ -24,7 +24,7 @@ class CountyCell: UITableViewCell {
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
