@@ -23,7 +23,11 @@ class CountryViewController: UIViewController {
     func initVC()  {
         self.title = self.selectedCountry?.name!
         self.bordersTable.alphCode = self.selectedCountry?.alpha3Code
-        self.bordersTable.countriesId = (self.selectedCountry?.borders)!
+        for countryId in self.selectedCountry!.borders!{
+            self.bordersTable.countriesId.append(DataManager.getSharedInstance().getSpesificCountry(countryId: countryId)!)
+        }
+        self.bordersTable.table.reloadData()
+        
         self.bordersTable.countyTableDelege = self
     }
 }

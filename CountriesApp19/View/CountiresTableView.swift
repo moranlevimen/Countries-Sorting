@@ -17,7 +17,7 @@ class CountiresTableView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet var table: UITableView!
     var alphCode:String?
-    var countriesId:[String] = []
+    var countriesId:[Country] = []
     var globalCoutries:[String:Country] = [:];
     var globalAlpha3Coodes:[String] = [];
     var countyTableDelege:CountryDelegate?
@@ -55,7 +55,7 @@ class CountiresTableView: UIView {
             self.countyTableDelege?.selectedCountry(country: coutry)
         }
         else {
-            self.countriesId = coutry.borders!
+            //self.countriesId = coutry.borders!
             self.countyTableDelege?.selectedCountry(country: coutry)
             self.table.reloadData()
         }
@@ -73,11 +73,11 @@ extension CountiresTableView:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CountyCell") as! CountyCell
         
-        cell.setLabels(county: DataManager.getSharedInstance().getSpesificCountry(countryId:self.countriesId[indexPath.row] )!)
+        cell.setLabels(county:  self.countriesId[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedCountryCell(coutry: DataManager.getSharedInstance().getCountriesDict()[self.countriesId[indexPath.row]]!)
+        selectedCountryCell(coutry: self.countriesId[indexPath.row])
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension

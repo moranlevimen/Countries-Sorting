@@ -23,7 +23,7 @@ class ServerManager {
         return ServerManager.sharedInstance!
     }
     
-    func getCountriesJson(completion:@escaping ([String:Country]?)->())  {
+    func getCountriesJson(completion:@escaping ([Country]?)->())  {
         guard let url = URL(string: "https://restcountries.eu/rest/v2/all") else{return}
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -34,7 +34,7 @@ class ServerManager {
                 do{
                     let countriesJson = try JSONDecoder().decode([Country].self,from: data!);
                     DataManager.getSharedInstance().setCountries(countries: countriesJson)
-                    completion(DataManager.getSharedInstance().getCountriesDict())
+                    completion(countriesJson)
                 }
                 catch{
                     completion(nil)

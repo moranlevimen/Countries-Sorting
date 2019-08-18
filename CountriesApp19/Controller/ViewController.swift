@@ -22,9 +22,11 @@ class ViewController: UIViewController {
         DispatchQueue.global(qos: .background).async {
             ServerManager.getSharedInstance().getCountriesJson(completion: { (data) in
                 if data != nil{
-                    self.countriesTable.countriesId =  Array(DataManager.getSharedInstance().getCountriesDict().keys)
-                    self.countriesTable.countyTableDelege = self
                     
+                    self.countriesTable.countriesId = data!.sorted(by: {$0.name! < $1.name!})
+                    
+                    
+                    self.countriesTable.countyTableDelege = self
                     DispatchQueue.main.async {
                         self.countriesTable.table.reloadData()
                     }
