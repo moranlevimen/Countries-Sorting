@@ -13,6 +13,8 @@ struct Country:Decodable {
     let nativeName: String? //if there is anything missing
     let alpha3Code:String?
     let borders:[String]?
+    let area : Float = 0
+   // var population: Int?
 }
 
 

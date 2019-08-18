@@ -29,6 +29,7 @@ class ServerManager {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if data == nil{
                 completion(nil);
+                print("error\(String(describing: error))")
             }
             else{
                 do{

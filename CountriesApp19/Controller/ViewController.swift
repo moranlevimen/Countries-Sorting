@@ -12,6 +12,52 @@ class ViewController: UIViewController {
     
     @IBOutlet var countriesTable: CountiresTableView!
     var selectedCountry:Country?
+    var isCheckedAb = true
+    var isSize = false
+    
+    @IBOutlet var sortBySIzeOutlet: UIView!
+    @IBOutlet weak var sortAreaOutlet: UIButton!
+    @IBAction func sortBySize(_ sender: Any) {
+        isSize = !isSize
+        if isSize{
+            (sender as AnyObject).setTitle("high->low", for: .normal)
+            (sender as AnyObject).setTitleColor(.green, for: .normal)
+            print("sort by size desending")
+            self.countriesTable.countriesId = self.countriesTable.countriesId.sorted {Float($0.area) < Float($1.area)}
+
+            self.countriesTable.table.reloadData()
+           
+        }else{
+            (sender as AnyObject).setTitle("low->higt", for: .normal)
+            (sender as AnyObject).setTitleColor(.red, for: .normal)
+            print("sort by size asending")
+            self.countriesTable.countriesId = self.countriesTable.countriesId.sorted {Float($0.area) > Float($1.area)}
+            
+            self.countriesTable.table.reloadData()
+       }
+ 
+      //  }
+    }
+    
+    @IBAction func soryByName(_ sender: Any) {
+        isCheckedAb = !isCheckedAb
+        if isCheckedAb{
+            (sender as AnyObject).setTitle("A-Z", for: .normal)
+            (sender as AnyObject).setTitleColor(.green, for: .normal)
+
+            print("sort by name desending")
+            self.countriesTable.countriesId = self.countriesTable.countriesId.sorted(by: {$0.name! < $1.name!})
+            self.countriesTable.table.reloadData()
+            
+        }else{
+            (sender as AnyObject).setTitle("Z-A", for: .normal)
+            (sender as AnyObject).setTitleColor(.red, for: .normal)
+            print("sort by name asending")
+            self.countriesTable.countriesId = self.countriesTable.countriesId.sorted(by: {$0.name! > $1.name!})
+            self.countriesTable.table.reloadData()
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +70,6 @@ class ViewController: UIViewController {
                 if data != nil{
                     
                     self.countriesTable.countriesId = data!.sorted(by: {$0.name! < $1.name!})
-                    
-                    
                     self.countriesTable.countyTableDelege = self
                     DispatchQueue.main.async {
                         self.countriesTable.table.reloadData()
