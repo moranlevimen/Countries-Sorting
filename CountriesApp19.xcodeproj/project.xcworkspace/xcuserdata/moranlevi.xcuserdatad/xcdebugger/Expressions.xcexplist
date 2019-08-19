@@ -8,6 +8,9 @@
             <PersistentString
                value = "Float($0.area)">
             </PersistentString>
+            <PersistentString
+               value = "self.countriesTable.countriesId">
+            </PersistentString>
          </PersistentStrings>
       </ContextState>
    </ContextStates>

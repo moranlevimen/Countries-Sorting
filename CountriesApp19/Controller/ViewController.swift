@@ -20,18 +20,19 @@ class ViewController: UIViewController {
     @IBAction func sortBySize(_ sender: Any) {
         isSize = !isSize
         if isSize{
-            (sender as AnyObject).setTitle("high->low", for: .normal)
+            (sender as AnyObject).setTitle("Low->high", for: .normal)
             (sender as AnyObject).setTitleColor(.green, for: .normal)
             print("sort by size desending")
-            self.countriesTable.countriesId = self.countriesTable.countriesId.sorted {Float($0.area) < Float($1.area)}
+            self.countriesTable.countriesId = self.countriesTable.countriesId.sorted {Float($0.area ?? 0) < Float($1.area ?? 0)}
 
+            print(self.countriesTable.countriesId)
             self.countriesTable.table.reloadData()
            
         }else{
-            (sender as AnyObject).setTitle("low->higt", for: .normal)
+            (sender as AnyObject).setTitle("higt->low", for: .normal)
             (sender as AnyObject).setTitleColor(.red, for: .normal)
             print("sort by size asending")
-            self.countriesTable.countriesId = self.countriesTable.countriesId.sorted {Float($0.area) > Float($1.area)}
+            self.countriesTable.countriesId = self.countriesTable.countriesId.sorted {Float($0.area ?? 0) > Float($1.area ?? 0)}
             
             self.countriesTable.table.reloadData()
        }
